@@ -22,8 +22,8 @@ jobs:
         run: |
           src=$(/usr/bin/curl -Lfs https://raw.githubusercontent.com/acidanthera/ocbuild/master/ci-bootstrap.sh) && eval "$src" || exit 1
 
-      - run: ARCHS=x86_64 xcodebuild -jobs 1 -configuration Release -arch x86_64
-      - run: ARCHS=x86_64 xcodebuild -jobs 1 -configuration Debug -arch x86_64
+      - run: ARCHS=x86_64 xcodebuild -jobs 1 -configuration Release
+      - run: ARCHS=x86_64 xcodebuild -jobs 1 -configuration Debug
 
       - name: Upload to Artifacts
         uses: actions/upload-artifact@v2
