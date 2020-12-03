@@ -22,8 +22,8 @@ jobs:
         run: |
           src=$(/usr/bin/curl -Lfs https://raw.githubusercontent.com/acidanthera/ocbuild/master/ci-bootstrap.sh) && eval "$src" || exit 1
 
-      - run: xcodebuild -jobs 1 -configuration Release -scheme MaciASL
-      - run: xcodebuild -jobs 1 -configuration Debug -scheme MaciASL
+      - run: xcodebuild -jobs 1 -configuration Release
+      - run: xcodebuild -jobs 1 -configuration Debug
 
       - name: Upload to Artifacts
         uses: actions/upload-artifact@v2
